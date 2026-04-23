@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>恆好物理治療所 | EVERWELL Physical Therapy Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --charcoal:    #2a2826;
+      --charcoal-mid:#3e3b38;
+      --gold:        #b5965a;
+      --gold-light:  #d4b88a;
+      --gold-pale:   #f5efe4;
+      --cream:       #faf8f5;
+      --cream-warm:  #f2ede5;
+      --stone:       #8c8880;
+      --stone-light: #c4bfb8;
+      --stone-pale:  #ede9e3;
+      --text:        #1e1c1a;
+      --white:       #ffffff;
+      --border:      rgba(42,40,38,0.1);
+      --border-gold: rgba(181,150,90,0.3);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans TC', sans-serif; font-weight: 400; color: var(--text); background: var(--cream); line-height: 1.8; font-size: 16px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250,248,245,0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 0 3rem; display: flex; align-items: center;
+      justify-content: space-between; height: 76px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+    .nav-logo-img { width: 44px; height: 44px; object-fit: contain; filter: contrast(1.1); }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.3; }
+    .nav-logo-zh { font-family: 'Noto Serif TC', serif; font-size: 1.4rem; font-weight: 600; color: var(--charcoal); letter-spacing: 0.08em; }
+    .nav-logo-en { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--stone); letter-spacing: 0.14em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 1rem; color: var(--stone); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-cta { background: var(--charcoal) !important; color: var(--cream) !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 1rem !important; }
+    .nav-cta:hover { background: var(--gold) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 8rem 3rem 5rem; background: var(--cream); position: relative; overflow: hidden;
+    }
+    .hero-line { display: none; }
+    .hero-content { position: relative; max-width: 820px; margin: 0 auto; width: 100%; text-align: center; }
+    .nav-logo-img { width: 48px; height: 48px; object-fit: contain; filter: contrast(1.1); }
+    .hero-en { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.28em; color: var(--gold); margin-bottom: 1.5rem; text-transform: uppercase; }
+    .hero-title { font-family: 'Noto Serif TC', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.25; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .hero-title-en { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 400; font-style: italic; color: var(--stone); margin-bottom: 2rem; letter-spacing: 0.05em; }
+    .hero-desc { color: var(--stone); font-size: 1.05rem; line-height: 2; margin: 0 auto 3rem; max-width: 560px; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); padding: 1.2rem 0; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary { background: var(--charcoal); color: var(--cream); padding: 0.95rem 2.4rem; border-radius: 2px; font-size: 1rem; text-decoration: none; transition: background 0.2s, transform 0.15s; letter-spacing: 0.1em; display: inline-block; }
+    .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--charcoal); color: var(--charcoal); padding: 0.95rem 2.4rem; border-radius: 2px; font-size: 1rem; text-decoration: none; transition: all 0.2s; letter-spacing: 0.1em; display: inline-block; }
+    .btn-outline:hover { background: var(--charcoal); color: var(--cream); transform: translateY(-1px); }
+    .hero-visual { display: flex; flex-direction: column; gap: 1px; }
+    .hero-card { background: var(--white); padding: 2rem 2.2rem; border: 1px solid var(--border); border-top: 2px solid var(--gold); }
+    .hero-card-title { font-family: 'Noto Serif TC', serif; font-size: 1rem; color: var(--charcoal); margin-bottom: 0.5rem; letter-spacing: 0.04em; }
+    .hero-card-sub { font-size: 1rem; color: var(--stone); line-height: 1.85; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-top: none; }
+    .stat-box { background: var(--cream-warm); padding: 1.4rem 1rem; text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--charcoal); line-height: 1; }
+    .stat-label { font-size: 0.88rem; color: var(--stone); margin-top: 0.3rem; letter-spacing: 0.06em; }
+    .gold-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-right: 0.5rem; vertical-align: middle; }
+
+    /* SECTIONS — 字體系統
+       section-tag     : 1.1rem  Cormorant  金色小標
+       section-title   : clamp(1.8–2.4rem)  Noto Serif  區塊大標
+       section-subtitle: 1.05rem  Noto Sans  說明段落
+       card-title      : 1.1rem  Noto Serif  卡片標題
+       body / desc     : 1rem    Noto Sans   內文
+       meta / label    : 0.88rem Cormorant   輔助小字
+    */
+    section { padding: 6rem 3rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--gold); font-size: 1.1rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif; }
+    .section-tag::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; color: var(--charcoal); line-height: 1.4; margin-bottom: 1rem; }
+    .section-subtitle { color: var(--stone); font-size: 1.05rem; max-width: 560px; line-height: 2; }
+    .section-header { margin-bottom: 4rem; }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .about-image-wrap { position: relative; }
+    .about-image-placeholder { background: var(--stone-pale); border-radius: 2px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); overflow: hidden; position: relative; }
+    .about-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(181,150,90,0.07), transparent); }
+    .about-placeholder-text { font-family: 'Cormorant Garamond', serif; font-size: 5rem; opacity: 0.1; color: var(--charcoal); }
+    .about-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--charcoal); border-radius: 2px; padding: 1.4rem 1.8rem; text-align: center; }
+    .about-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--gold-light); line-height: 1.1; }
+    .about-badge-text { font-size: 0.88rem; color: var(--stone-light); letter-spacing: 0.1em; margin-top: 0.25rem; }
+    .value-list { list-style: none; margin-top: 2.5rem; }
+    .value-item { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+    .value-item:last-child { border-bottom: none; }
+    .value-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); line-height: 1; min-width: 28px; padding-top: 0.1rem; }
+    .value-text strong { display: block; font-size: 1.05rem; color: var(--charcoal); margin-bottom: 0.3rem; font-weight: 500; }
+    .value-text span { font-size: 1rem; color: var(--stone); line-height: 1.9; }
+
+    /* TEAM */
+    #team { background: var(--cream); }
+    .team-single { display: grid; grid-template-columns: 380px 1fr; gap: 5rem; align-items: start; }
+    .team-photo-wrap { border-radius: 2px; overflow: hidden; border: 1px solid var(--border); }
+    .team-photo { width: 100%; display: block; object-fit: cover; aspect-ratio: 3/4; }
+    .team-name-lg { font-family: 'Noto Serif TC', serif; font-size: 2rem; color: var(--charcoal); font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+    .team-role { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+    .team-divider { border: none; border-top: 1px solid var(--border-gold); margin-bottom: 1.8rem; }
+    .team-section-label { font-size: 0.88rem; color: var(--stone); letter-spacing: 0.18em; text-transform: uppercase; font-family: 'Cormorant Garamond', serif; margin-bottom: 0.8rem; }
+    .team-skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .team-skills span { font-size: 1rem; color: var(--charcoal); border: 1px solid var(--border-gold); padding: 0.3rem 0.9rem; border-radius: 1px; background: var(--gold-pale); }
+    .team-edu { list-style: none; }
+    .team-edu li { font-size: 1rem; color: var(--stone); padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; align-items: baseline; }
+    .team-edu li::before { content: '—'; color: var(--gold); font-size: 0.8rem; flex-shrink: 0; }
+    .team-edu li:last-child { border-bottom: none; }
+    @media (max-width: 800px) { .team-single { grid-template-columns: 1fr; gap: 2rem; } }
+
+    /* SERVICES ACCORDION */
+    #services { background: var(--white); }
+    .services-accordion { border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+    .svc-item { border-bottom: 1px solid var(--border); }
+    .svc-item:last-child { border-bottom: none; }
+    .svc-header { width: 100%; background: none; border: none; padding: 1.6rem 2rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; transition: background 0.2s; text-align: left; }
+    .svc-header:hover { background: var(--gold-pale); }
+    .svc-item.open .svc-header { background: var(--gold-pale); border-bottom: 1px solid var(--border-gold); }
+    .svc-left { display: flex; align-items: center; gap: 1.5rem; }
+    .svc-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); min-width: 32px; line-height: 1; }
+    .svc-name { font-family: 'Noto Serif TC', serif; font-size: 1.15rem; color: var(--charcoal); margin-bottom: 0.4rem; font-weight: 500; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .svc-tags span { font-size: 0.88rem; color: var(--stone); border: 1px solid var(--border); border-radius: 1px; padding: 0.15rem 0.6rem; letter-spacing: 0.04em; }
+    .svc-arrow { font-size: 1.2rem; color: var(--gold); flex-shrink: 0; transition: transform 0.3s; line-height: 1; }
+    .svc-item.open .svc-arrow { transform: rotate(45deg); }
+    .svc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 2rem 0 5.5rem; background: var(--cream); }
+    .svc-item.open .svc-body { max-height: 400px; padding: 1.5rem 2rem 1.8rem 5.5rem; }
+    .svc-body p { font-size: 1rem; color: var(--stone); line-height: 2; margin-bottom: 0.8rem; }
+    .svc-body p:last-child { margin-bottom: 0; }
+    .svc-body strong { color: var(--charcoal); font-weight: 500; }
+
+    /* PRICING */
+    #pricing { background: var(--stone-pale); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; align-items: stretch; }
+    .price-card { background: var(--white); border-radius: 2px; padding: 2.5rem 2rem; border: 1px solid var(--border); border-top: 2px solid var(--stone-light); display: flex; flex-direction: column; }
+    .price-card.featured { border-top-color: var(--gold); }
+    .price-badge { display: inline-block; background: var(--gold); color: var(--white); font-size: 0.88rem; padding: 0.25rem 0.85rem; border-radius: 1px; letter-spacing: 0.08em; margin-bottom: 1rem; }
+    .price-plan { font-family: 'Noto Serif TC', serif; font-size: 1.15rem; color: var(--charcoal); font-weight: 500; height: 3.6rem; display: flex; align-items: center; }
+    .price-num-wrap { height: 4rem; display: flex; align-items: center; margin-bottom: 0; }
+    .price-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; color: var(--charcoal); line-height: 1; }
+    .price-unit { font-size: 0.88rem; color: var(--stone); margin-left: 0.3rem; }
+    .price-divider { border: none; border-top: 1px solid var(--border); margin: 1.2rem 0; }
+    .price-features { list-style: none; margin-bottom: 2rem; flex: 1; }
+    .price-features li { padding: 0.55rem 0; font-size: 1rem; color: var(--charcoal); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.7rem; }
+    .price-features li::before { content: ''; display: inline-block; width: 14px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .price-features li:last-child { border-bottom: none; }
+    .price-btn { display: block; text-align: center; padding: 0.9rem; border-radius: 2px; font-size: 1rem; text-decoration: none; letter-spacing: 0.1em; transition: all 0.2s; }
+    .price-btn-outline { border: 1px solid var(--charcoal); color: var(--charcoal); }
+    .price-btn-outline:hover { background: var(--charcoal); color: var(--cream); }
+    .price-btn-fill { background: var(--charcoal); color: var(--cream); }
+    .price-btn-fill:hover { background: var(--gold); }
+
+    /* PRICING EXTRA */
+    .pricing-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .pricing-extra-block { background: var(--white); border: 1px solid var(--border); border-top: 2px solid var(--stone-light); border-radius: 2px; padding: 2rem; }
+    .pricing-extra-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .pricing-extra-grid { display: flex; flex-direction: column; gap: 0; }
+    .pricing-extra-item { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border); gap: 1rem; }
+    .pricing-extra-item:last-child { border-bottom: none; }
+    .pricing-extra-name { font-size: 1rem; color: var(--charcoal); flex: 1; }
+    .pricing-extra-sub { font-size: 0.88rem; color: var(--stone); min-width: 60px; text-align: center; }
+    .pricing-extra-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--charcoal); white-space: nowrap; text-align: right; }
+    .pricing-extra-price span { font-family: 'Noto Sans TC', sans-serif; font-size: 0.88rem; color: var(--stone); margin-left: 0.2rem; }
+    @media (max-width: 800px) { .pricing-grid { grid-template-columns: 1fr 1fr; } .pricing-extra { grid-template-columns: 1fr; } }
+
+    /* ENVIRONMENT */
+    #environment { background: var(--white); }
+    .env-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .env-card { border-radius: 2px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.2s; }
+    .env-card-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .env-card-wide .env-photo-wide { aspect-ratio: 16/7; }
+    .env-card-wide .env-info { display: flex; flex-direction: column; justify-content: center; padding: 2.5rem; }
+    .env-card:hover { transform: translateY(-4px); }
+    .env-photo { aspect-ratio: 4/3; background: var(--stone-pale); overflow: hidden; }
+    .env-photo-wide { background: var(--stone-pale); overflow: hidden; }
+    .env-photo img, .env-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .env-card:hover .env-photo img, .env-card:hover .env-photo-wide img { transform: scale(1.04); }
+    .env-info { padding: 1.5rem; background: var(--white); }
+    .env-name { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .env-desc { font-size: 1rem; color: var(--stone); line-height: 1.9; }
+    .env-tag { display: inline-block; font-size: 0.88rem; color: var(--gold); border: 1px solid var(--border-gold); padding: 0.2rem 0.7rem; border-radius: 1px; margin-top: 0.8rem; letter-spacing: 0.06em; }
+
+    /* CONTACT */
+    #contact { background: var(--stone-pale); }
+    #contact .section-tag { color: var(--gold); }
+    #contact .section-tag::before { background: var(--gold); }
+    #contact .section-title { color: var(--charcoal); }
+    #contact .section-subtitle { color: var(--stone); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info-list { margin-top: 2.5rem; }
+    .contact-info-item { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+    .contact-icon { width: 36px; height: 36px; border: 1px solid var(--border-gold); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); }
+    .contact-detail strong { display: block; font-size: 0.88rem; color: var(--stone); margin-bottom: 0.2rem; letter-spacing: 0.08em; font-weight: 400; font-family: 'Cormorant Garamond', serif; }
+    .contact-detail span { font-size: 0.95rem; color: var(--charcoal); }
+    /* HOURS TABLE */
+    .hours-wrap { padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+    .hours-label { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--stone); letter-spacing: 0.14em; margin-bottom: 0.8rem; }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table thead th { font-size: 0.88rem; color: var(--stone); font-weight: 400; text-align: center; padding: 0.25rem 0.2rem 0.5rem; letter-spacing: 0.06em; }
+    .hours-table thead th:first-child { text-align: left; }
+    .hours-table tbody tr { border-top: 1px solid var(--border); }
+    .hours-session { font-size: 0.88rem; color: var(--charcoal); padding: 0.6rem 0; white-space: nowrap; }
+    .hours-session span { display: block; font-size: 0.78rem; color: var(--stone); margin-top: 0.1rem; letter-spacing: 0.04em; }
+    .hours-table tbody td { text-align: center; padding: 0.6rem 0.2rem; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+    .dot.on { background: var(--charcoal); }
+    .dot.off { background: transparent; }
+
+    /* CONTACT MAP */
+    .contact-map { display: flex; flex-direction: column; gap: 0.8rem; }
+    .map-label { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--stone); letter-spacing: 0.18em; text-transform: uppercase; }
+    .map-wrap { border-radius: 2px; overflow: hidden; border: 1px solid var(--border); height: 220px; }
+    .map-wrap iframe { display: block; width: 100%; height: 100%; }
+    .map-link { font-size: 0.88rem; color: var(--gold); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; align-self: flex-end; }
+    .map-link:hover { color: var(--charcoal); }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); padding: 0 3rem; height: 76px; display: flex; align-items: center; }
+    .footer-copy { text-align: center; font-size: 0.88rem; color: rgba(255,255,255,0.3); letter-spacing: 0.04em; max-width: 1100px; margin: 0 auto; width: 100%; }
+
+    /* EQUIPMENT */
+    .equip-section { margin-top: 4rem; border-top: 1px solid var(--border-gold); padding-top: 3rem; }
+    .equip-label { margin-bottom: 2rem; }
+    .equip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .equip-card { background: var(--cream); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .equip-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(42,40,38,0.08); }
+    .equip-img-wrap { background: transparent; height: 260px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; overflow: hidden; }
+    .equip-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .equip-info { padding: 1.2rem 1.4rem 1.5rem; }
+    .equip-en { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 0.25rem; }
+    .equip-zh { font-family: 'Noto Serif TC', serif; font-size: 1.1rem; color: var(--charcoal); margin-bottom: 0.6rem; }
+    .equip-desc { font-size: 1rem; color: var(--stone); line-height: 1.85; }
+    @media (max-width: 800px) { .equip-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* CERTIFICATES */
+    .cert-section { margin-top: 4rem; border-top: 1px solid var(--border-gold); padding-top: 3rem; }
+    .cert-label { margin-bottom: 2rem; }
+    .cert-track-wrap { overflow: hidden; border-radius: 2px; }
+    .cert-track { display: flex; gap: 1.5rem; transition: transform 0.4s ease; }
+    .cert-card { flex: 0 0 calc(33.333% - 1rem); background: var(--white); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+    .cert-card img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
+    .cert-card-info { padding: 1.2rem 1.5rem; }
+    .cert-card-en { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+    .cert-card-zh { font-size: 1rem; color: var(--charcoal); }    .cert-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+    .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--stone-light); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+    .cert-dot.active { background: var(--gold); }
+    @media (max-width: 800px) { .cert-card { flex: 0 0 85%; } }
+    .gold-rule { border: none; border-top: 1px solid var(--border-gold); margin: 0 3rem; }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      /* 基礎 */
+      section { padding: 3rem 1.2rem; }
+      .container { max-width: 100%; }
+
+      /* NAV */
+      nav { padding: 0 1.2rem; height: 60px; }
+      .nav-logo-zh { font-size: 1.1rem; }
+      .nav-logo-en { font-size: 0.72rem; }
+      .nav-logo-img { width: 36px; height: 36px; }
+      .nav-links { display: none; }
+      .gold-rule { margin: 0 1.2rem; }
+
+      /* HERO */
+      .hero { padding: 5.5rem 1.2rem 3rem; }
+      .hero-logo { width: 140px; height: 140px; }
+      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-title-en { font-size: 1rem; }
+      .hero-desc { font-size: 0.95rem; }
+      .btn-primary, .btn-outline { padding: 0.8rem 1.6rem; font-size: 0.9rem; }
+
+      /* ABOUT */
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge { bottom: -1rem; right: -0.5rem; padding: 1rem 1.2rem; }
+      .about-badge-num { font-size: 1.6rem; }
+
+      /* TEAM */
+      .team-single { grid-template-columns: 1fr; gap: 2rem; }
+      .team-photo-wrap { max-width: 300px; margin: 0 auto; }
+
+      /* SERVICES */
+      .svc-header { padding: 1.2rem 1rem; }
+      .svc-left { gap: 1rem; }
+      .svc-num { font-size: 1.4rem; min-width: 24px; }
+      .svc-name { font-size: 1rem; }
+      .svc-tags span { font-size: 0.78rem; }
+      .svc-body { padding: 0 1rem 0 3.5rem; }
+      .svc-item.open .svc-body { padding: 1.2rem 1rem 1.5rem 3.5rem; }
+
+      /* PRICING */
+      .pricing-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .price-card { padding: 1.5rem 1.2rem; }
+      .price-plan { font-size: 0.88rem; height: auto; min-height: 2.8rem; }
+      .price-num { font-size: 2rem; }
+      .price-num-wrap { height: 3rem; }
+      .price-features li { font-size: 0.85rem; }
+      .pricing-extra { grid-template-columns: 1fr; }
+
+      /* ENVIRONMENT */
+      .env-grid { grid-template-columns: 1fr; }
+      .env-card-wide { grid-column: 1; display: block; }
+      .env-card-wide .env-photo-wide { aspect-ratio: 4/3; }
+      /* EQUIP */
+      .equip-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .equip-img-wrap { height: 180px; }
+      .equip-zh { font-size: 0.95rem; }
+      .equip-desc { font-size: 0.85rem; }
+
+      /* CERT */
+      .cert-card { flex: 0 0 80%; }
+
+      /* CONTACT */
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hours-table thead th { font-size: 0.78rem; padding: 0.2rem 0.1rem; }
+      .hours-session { font-size: 0.78rem; }
+      .hours-session span { font-size: 0.68rem; }
+
+      /* FOOTER */
+      footer { height: auto; padding: 1.5rem 1.2rem; }
+      .footer-copy { font-size: 0.75rem; }
+    }
+
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .equip-grid { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; }
+      .section-title { font-size: 1.6rem; }
+    }
+  </style>
+
+  <!-- 漢堡選單 -->
+  <style>
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); border-radius: 2px; transition: all 0.3s; }
+    .nav-mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(250,248,245,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-gold); z-index: 99; padding: 1.5rem 1.2rem; flex-direction: column; gap: 0; }
+    .nav-mobile-menu a { display: block; padding: 1rem 0; font-size: 1rem; color: var(--charcoal); text-decoration: none; border-bottom: 1px solid var(--border); letter-spacing: 0.06em; }
+    .nav-mobile-menu a:last-child { border-bottom: none; }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 800px) { .nav-hamburger { display: flex; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img class="nav-logo-img" src="Logo.png" alt="恆好物理治療所 Logo" onerror="this.style.display='none'" />
+    <div class="nav-logo-text">
+      <span class="nav-logo-zh">恆好物理治療所</span>
+      <span class="nav-logo-en">EVERWELL Physical Therapy Clinic</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">關於恆好</a></li>
+    <li><a href="#team">團隊介紹</a></li>
+    <li><a href="#services">服務項目</a></li>
+    <li><a href="#pricing">收費標準</a></li>
+    <li><a href="#environment">環境設備</a></li>
+    <li><a href="#contact" class="nav-cta">聯絡我們</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">關於恆好</a>
+  <a href="#team" onclick="closeMenu()">團隊介紹</a>
+  <a href="#services" onclick="closeMenu()">服務項目</a>
+  <a href="#pricing" onclick="closeMenu()">收費標準</a>
+  <a href="#environment" onclick="closeMenu()">環境設備</a>
+  <a href="#contact" onclick="closeMenu()">聯絡我們</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-en">EVERWELL Physical Therapy Clinic</div>
+      <h1 class="hero-title">健康恆久<br>生活更好</h1>
+      <div class="hero-title-en">Professional Physical Therapy, Genuine Care</div>
+      <p class="hero-desc">
+        恆好物理治療所由專業治療師團隊領軍，堅持以科學化評估為核心，為每位患者量身打造精準的治療計畫。我們致力於協助每位患者找回身體的最佳狀態，重返美好的日常生活。
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">立即預約</a>
+        <a href="#services" class="btn-outline">了解服務</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="gold-rule" />
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap fade-in">
+        <div class="about-image-placeholder">
+          <img src="clinic.png" alt="恆好物理治療所外觀" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num" style="font-size:1.1rem; letter-spacing:0.1em;">Since</div>
+          <div class="about-badge-num">2026</div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <span class="section-tag">關於恆好</span>
+        <h2 class="section-title">以專業守護<br>讓復原恆久</h2>
+        <p class="section-subtitle">2026 年，我們在這片土地扎根，為鄰里提供更細膩的物理治療。在恆好，每一份疼痛都值得被溫柔對待。我們用專業引領復原的方向，用關懷消弭復健的不安。讓我們陪伴您走過這段里程碑，讓日常的自在，成為最恆久的風景。</p>
+        <ul class="value-list">
+          <li class="value-item">
+            <div class="value-num">01</div>
+            <div class="value-text"><strong>科學化評估與個人化治療</strong><span>每位患者都是獨一無二的個體，我們以精準評估為基礎，量身設計最適合的治療計畫。</span></div>
+          </li>
+          <li class="value-item">
+            <div class="value-num">02</div>
+            <div class="value-text"><strong>實證醫學的治療依據</strong><span>所有治療方式皆以最新臨床研究為基礎，確保每一步都有科學依據，讓您安心接受治療。</span></div>
+          </li>
+          <li class="value-item">
+            <div class="value-num">03</div>
+            <div class="value-text"><strong>持續學習、精進技術</strong><span>團隊定期參與國內外專業培訓，持續更新技術知識，為患者提供最優質的治療服務。</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">團隊介紹</span>
+      <h2 class="section-title">專業治療師團隊</h2>
+      <p class="section-subtitle" style="max-width:100%; white-space:nowrap;">每位治療師皆具備國家證照與豐富臨床經驗，以專業與熱忱陪伴您的復健旅程。</p>
+    </div>
+    <div class="team-single fade-in">
+      <div class="team-photo-wrap">
+        <img src="chen.jpg" alt="陳睿亨院長" class="team-photo" />
+      </div>
+      <div class="team-info">
+        <div class="team-role">院長 · 物理治療師</div>
+        <div class="team-name-lg">陳睿亨</div>
+        <div class="team-divider"></div>
+        <div class="team-section-label">專長項目</div>
+        <div class="team-skills">
+          <span>骨科術後復健</span>
+          <span>骨骼肌肉疼痛</span>
+          <span>體外震波治療</span>
+          <span>高能雷射治療</span>
+          <span>足踝評估與治療</span>
+        </div>
+        <div class="team-section-label" style="margin-top:1.8rem;">學經歷</div>
+        <ul class="team-edu">
+          <li>成功大學物理治療所 碩士</li>
+          <li>前臻理物理治療所 — 副主任</li>
+          <li>前學善健康顧問公司 — 教育總監</li>
+          <li>前澄清醫院復健治療部 — 物理治療師</li>
+          <li>前 Johnson 喬山魔鏡 — 物理治療師</li>
+          <li>BOMT 生物力學徒手課程 — 講師</li>
+          <li>Vasyli medical 足踝醫學 — 講師</li>
+          <li>TMSA 系列課程 — 講師</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">服務項目</span>
+      <h2 class="section-title">全方位物理治療服務</h2>
+      <p class="section-subtitle" style="max-width:100%; white-space:nowrap;">結合徒手治療、儀器療法與運動訓練，針對各類骨骼肌肉與神經系統問題提供精準復健方案。</p>
+    </div>
+    <div class="services-accordion">
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">01</span>
+            <div>
+              <div class="svc-name">術後復健</div>
+              <div class="svc-tags"><span>旋轉肌腱修補</span><span>十字韌帶重建</span><span>跟腱修補</span><span>腰椎手術</span><span>骨折術後</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>手術術後會些微改變身體組織環境（如：表皮、真皮、筋膜、肌肉及韌帶結構），若未妥善處理，容易產生組織沾黏、肌肉萎縮等一系列問題。</p>
+          <p>每一種手術都有其關鍵介入黃金期。復健規劃旨在平衡「組織癒合強度」與「活動度恢復」，透過精確的階段性介入，協助您在確保結構穩固的前提下，以最高效率重拾行動力。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">02</span>
+            <div>
+              <div class="svc-name">運動傷害與預防</div>
+              <div class="svc-tags"><span>急性傷害</span><span>慢性勞損</span><span>動作生物力學分析</span><span>運動表現提升</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>物理治療師結合臨床解剖學與運動生物力學，針對不同運動項目的動作型態進行深層分析。我們不只處理表象的組織損傷（如肌腱、肌肉、韌帶或骨裂），更致力於揪出潛藏的受傷成因。</p>
+          <p>針對急性、亞急性及慢性各個階段，提供精準的治療策略與循序漸進的功能訓練，協助您在安全的架構下挑戰極限，實現卓越的運動表現。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">03</span>
+            <div>
+              <div class="svc-name">頸部痠痛</div>
+              <div class="svc-tags"><span>急性落枕</span><span>慢性肩頸痠痛</span><span>富貴包</span><span>頸因性頭痛</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>頸部症狀往往不只是局部問題。治療師將全面評估頭頸周圍肌肉張力、筋膜延展度及頸椎關節活動度，並施行徒手治療（如關節鬆動術、肌筋膜鬆動）。</p>
+          <p>部分患者的症狀延伸至頭部造成頸因性頭痛，或產生手麻等症狀，可透過神經張力手法處理。頸部許多肌肉延伸到上背，會透過動作控制訓練教導較佳的身體姿勢，改善症狀並避免再發。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">04</span>
+            <div>
+              <div class="svc-name">上背疼痛</div>
+              <div class="svc-tags"><span>圓肩</span><span>駝背</span><span>膏肓痛</span><span>上交叉症候群</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>治療師會先行評估頸椎與胸椎在彎曲、伸直、側彎及旋轉各維度的活動度，透過關節鬆動術等徒手治療恢復關節應有的活動空間。</p>
+          <p>之後針對頸部前後側、前胸（胸大肌、胸小肌）及上下背部（菱形肌、斜方肌）進行肌力與延展度檢測，透過徒手肌筋膜放鬆平衡張力失調。在「關節活動度」與「組織張力」獲得改善後，進行動作控制訓練，重建正確姿勢，達到長效預防的目的。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">05</span>
+            <div>
+              <div class="svc-name">五十肩</div>
+              <div class="svc-tags"><span>冰凍肩</span><span>肩關節攣縮</span><span>粘黏性關節囊炎</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>五十肩雖是通俗稱呼，但其背後涉及複雜的生理機制。治療不僅在於肩膀，更在於整體肩帶結構的協調。治療師會針對「肩肱關節」的主被動活動度進行深度評估，並延伸檢查胸鎖關節、肩峰鎖骨關節及肩胛胸闊關節的聯動功能。</p>
+          <p><strong>治療策略：</strong>疼痛控制（超音波治療、徒手治療、高能雷射）→ 關節角度復原（徒手治療、關節鬆動術、震波治療）→ 肌力恢復（運動治療）。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">06</span>
+            <div>
+              <div class="svc-name">肩關節夾擠症候群</div>
+              <div class="svc-tags"><span>棘上肌</span><span>二頭肌長頭肌腱</span><span>肩峰下空間</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>肩關節夾擠是指在「肩峰下空間」內的棘上肌、二頭肌長頭肌腱、滑囊或關節唇受到擠壓而產生疼痛，常見於需頻繁舉手的工作者或專項運動員（如：棒球、排球、高爾夫）。</p>
+          <p>疼痛的背後通常隱藏著肌肉力量失衡。治療師會透過精準觸診與功能性動作評估，釐清肩胛骨是否存在前傾或向下旋轉等異常模式，我們的治療旨在校正肩胛動態、重建肌肉平衡。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">07</span>
+            <div>
+              <div class="svc-name">腕隧道症候群</div>
+              <div class="svc-tags"><span>正中神經受壓</span><span>手指麻木</span><span>夜間疼痛</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>腕隧道症候群主要源於正中神經受壓。典型症狀為大拇指、食指、中指及無名指橈側的麻木、刺痛或無力感，且夜間睡眠時症狀尤為明顯。</p>
+          <p>運用關節鬆動術調整腕骨、徒手筋膜放鬆緩解肌腱緊繃，並搭配體外震波與超音波療法解決韌帶沾黏，緩解神經壓迫的不適感。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">08</span>
+            <div>
+              <div class="svc-name">網球肘</div>
+              <div class="svc-tags"><span>肱骨外上髁炎</span><span>伸腕肌群肌腱病變</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>網球肘主要因過度重複腕部伸直動作，導致肱骨外上髁處的伸指與伸腕肌群肌腱產生微小撕裂與發炎。</p>
+          <p>透過理學檢查與超音波診斷精確定位病灶，結合徒手治療、超音波療法及針對慢性頑疾的體外震波，並輔以肌內效貼布提供動態保護，全方位緩解疼痛並促進受損組織修復。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">09</span>
+            <div>
+              <div class="svc-name">媽媽手</div>
+              <div class="svc-tags"><span>狹窄性肌腱滑膜炎</span><span>狄奎凡氏症</span><span>拇指疼痛</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>接近手腕處的大拇指側出現持續疼痛，常合併上肢緊繃、局部腫脹等症狀，且會向上延伸到前臂，向下延伸到拇指關節，大拇指翹起來時候更痛。</p>
+          <p>主要因過度使用「外展拇長肌」與「伸拇短肌」，導致拇指肌腱與滑膜發生發炎與狹窄現象。從徒手、超音波到體外震波與高能雷射都是治療媽媽手的有效方法。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">10</span>
+            <div>
+              <div class="svc-name">髖關節疼痛</div>
+              <div class="svc-tags"><span>髖關節功能障礙</span><span>彈響髖</span><span>髖關節夾擠</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>髖關節疼痛常不限於局部，而是延伸至鼠蹊、臀部甚至影響膝踝動力鍊。由於髖部與骨盆帶結構緊密，治療關鍵在於精確鑑別疼痛來源。</p>
+          <p>透過專業評估找出周邊肌肉（如髂腰肌、臀肌、梨狀肌）的張力不平衡與關節囊限制，進而結合徒手治療、軟組織放鬆與動作訓練，從根本解決活動度受限並重建關節穩定度。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">11</span>
+            <div>
+              <div class="svc-name">扁平足</div>
+              <div class="svc-tags"><span>功能性扁平足</span><span>過度旋前</span><span>下肢動力鍊失衡</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>功能性扁平足雖在不負重時保有足弓，但踩地受力後足弓便會消失，不僅易導致足部疲累疼痛，更會因「過度旋前（Hyperpronation）」引發下肢連鎖效應，使膝蓋、骨盆甚至腰椎陷於內旋壓力，長期下來可能誘發膝痛、背痛甚至坐骨神經痛。</p>
+          <p>物理治療的關鍵在於打破此代償循環，除了透過脛後肌與足部核心訓練提升穩定性，更需從髖關節臀肌訓練著手，由上而下減輕足弓負擔，徹底重建下肢的力學平衡。</p>
+        </div>
+      </div>
+
+      <div class="svc-item fade-in">
+        <button class="svc-header" onclick="toggleSvc(this)">
+          <div class="svc-left">
+            <span class="svc-num">12</span>
+            <div>
+              <div class="svc-name">腳踝扭傷</div>
+              <div class="svc-tags"><span>急性扭傷</span><span>慣性扭傷</span><span>本體感覺訓練</span></div>
+            </div>
+          </div>
+          <span class="svc-arrow">＋</span>
+        </button>
+        <div class="svc-body">
+          <p>腳踝扭傷若處理不當，極易陷入「慣性扭傷」的惡性循環。在受傷初期，透過精準的理學檢查評估韌帶損傷程度，並利用淋巴引流手法與循環輔助設備快速消除腫脹；隨後針對踝關節與小腿周邊組織施行徒手治療，恢復肌肉延展性與關節活動度。</p>
+          <p>治療的核心更在於後期的「本體感覺訓練」與下肢肌力強化，透過重建大腦對關節的精準控制與平衡覺，不僅能緩解當下疼痛，更能全面提升腳踝穩定性，助您重返運動並預防再次受傷。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">收費標準</span>
+      <h2 class="section-title">透明合理的費用</h2>
+      <p class="section-subtitle" style="max-width:100%;">所有項目費用公開透明，歡迎來電諮詢，我們將為您說明最適合的治療方案。</p>
+    </div>
+
+    <!-- 主要方案 -->
+    <div class="pricing-grid">
+
+      <div class="price-card fade-in">
+        <div class="price-plan">物理治療評估</div>
+        <div class="price-num-wrap"><span class="price-num">500</span><span class="price-unit">元 / 次</span></div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li>專業物理治療師評估</li>
+          <li>動作功能分析</li>
+          <li>個人化治療計畫建議</li>
+        </ul>
+      </div>
+
+      <div class="price-card fade-in">
+        <div class="price-plan">整合性治療</div>
+        <div class="price-num-wrap"><span class="price-num">1,500</span><span class="price-unit">元 / 次</span></div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li>一對一專屬徒手治療</li>
+          <li>個人化運動治療指導</li>
+          <li>增加一部位加 300 元（上限兩部位）</li>
+        </ul>
+      </div>
+
+      <div class="price-card fade-in">
+        <div class="price-plan">整合性治療 ＋ 高階儀器</div>
+        <div class="price-num-wrap"><span class="price-num">2,000</span><span class="price-unit">元 / 次</span></div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li>整合性治療（徒手＋運動）</li>
+          <li>ESWT 體外震波 800 發</li>
+          <li>HILT 高能量雷射治療</li>
+          <li>增加一部位加 300 元（上限兩部位）</li>
+        </ul>
+      </div>
+
+      <div class="price-card fade-in">
+        <div class="price-plan">整合性治療 ＋ 高階儀器 ＋ 超能磁場</div>
+        <div class="price-num-wrap"><span class="price-num">2,500</span><span class="price-unit">元 / 次</span></div>
+        <hr class="price-divider" />
+        <ul class="price-features">
+          <li>整合性治療（徒手＋運動）</li>
+          <li>ESWT 體外震波 800 發</li>
+          <li>HILT 高能量雷射治療</li>
+          <li>SIS 超能磁場治療（10 分鐘）</li>
+          <li>增加一部位加 300 元（上限兩部位）</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 高階儀器 & 其他 -->
+    <div class="pricing-extra fade-in">
+      <div class="pricing-extra-block">
+        <div class="pricing-extra-title">高階儀器單項</div>
+        <div class="pricing-extra-grid">
+          <div class="pricing-extra-item">
+            <div class="pricing-extra-name">SIS 超能磁場治療儀</div>
+            <div class="pricing-extra-sub">10 分鐘</div>
+            <div class="pricing-extra-price">1,000 <span>元/次</span></div>
+          </div>
+          <div class="pricing-extra-item">
+            <div class="pricing-extra-name">ESWT 體外震波</div>
+            <div class="pricing-extra-sub">1,000 發</div>
+            <div class="pricing-extra-price">1,000 <span>元/次</span></div>
+          </div>
+          <div class="pricing-extra-item">
+            <div class="pricing-extra-name">HILT 高能量雷射</div>
+            <div class="pricing-extra-sub">5 分鐘</div>
+            <div class="pricing-extra-price">500 <span>元/次</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-extra-block">
+        <div class="pricing-extra-title">其他項目</div>
+        <div class="pricing-extra-grid">
+          <div class="pricing-extra-item">
+            <div class="pricing-extra-name">運動貼紮技術費</div>
+            <div class="pricing-extra-sub">&nbsp;</div>
+            <div class="pricing-extra-price">200 <span>元/次</span></div>
+          </div>
+          <div class="pricing-extra-item">
+            <div class="pricing-extra-name">治療證明書</div>
+            <div class="pricing-extra-sub">&nbsp;</div>
+            <div class="pricing-extra-price">50 <span>元/份</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:2.5rem; font-size:0.88rem; color:var(--stone);">
+      ※ 費用如有調整以治療所公告為準，詳情請來電洽詢。
+    </p>
+  </div>
+</section>
+
+<!-- ENVIRONMENT -->
+<section id="environment">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">環境設備</span>
+      <h2 class="section-title">專業舒適的治療空間</h2>
+      <p class="section-subtitle" style="max-width:100%; white-space:nowrap;">精心規劃的治療環境與先進復健設備，讓每次治療都在最理想的條件下進行。</p>
+    </div>
+    <div class="env-grid">
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-reception.jpg" alt="形象牆" /></div>
+        <div class="env-info">
+          <div class="env-name">形象牆</div>
+          <div class="env-desc">以恆好 Logo 主牆為核心，沉穩的清水模質感搭配明亮廊道，展現治療所的專業與溫度。</div>
+          <span class="env-tag">專業 · 沉穩</span>
+        </div>
+      </div>
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-lobby.jpg" alt="等候區" /></div>
+        <div class="env-info">
+          <div class="env-name">等候區</div>
+          <div class="env-desc">寬敞明亮的等候空間，透過大面落地窗引入自然光線，舒適的座椅讓就診前的等待也輕鬆愉快。</div>
+          <span class="env-tag">溫馨 · 舒適</span>
+        </div>
+      </div>
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-treatment.jpg" alt="個別治療室" /></div>
+        <div class="env-info">
+          <div class="env-name">個別治療室</div>
+          <div class="env-desc">獨立隔音空間，保護患者隱私，讓您在安靜放鬆的環境中接受一對一專屬治療。</div>
+          <span class="env-tag">私密 · 安靜</span>
+        </div>
+      </div>
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-gym.jpg" alt="運動治療區" /></div>
+        <div class="env-info">
+          <div class="env-name">運動治療區</div>
+          <div class="env-desc">配備專業複合式訓練機、彩色槓片等器材，提供完整的功能性肌力訓練與運動治療空間。</div>
+          <span class="env-tag">專業器材</span>
+        </div>
+      </div>
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-corridor.jpg" alt="治療走廊" /></div>
+        <div class="env-info">
+          <div class="env-name">治療走廊</div>
+          <div class="env-desc">採用霧面玻璃隔間設計，兼顧採光與隱私，明亮舒適的動線讓就診體驗更加輕鬆自在。</div>
+          <span class="env-tag">舒適動線</span>
+        </div>
+      </div>
+      <div class="env-card fade-in">
+        <div class="env-photo"><img src="env-restroom.jpg" alt="無障礙廁所" /></div>
+        <div class="env-info">
+          <div class="env-name">無障礙廁所</div>
+          <div class="env-desc">符合無障礙規範，配備完善的安全扶手與緊急求助設施，讓行動不便的患者也能安心使用。</div>
+          <span class="env-tag">無障礙設施</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 高階儀器介紹 -->
+    <div class="equip-section fade-in">
+      <div class="equip-label">
+        <span class="section-tag" style="margin-bottom:0;">高階治療儀器</span>
+        <p class="section-subtitle" style="margin-top:0.8rem;">恆好引進國際頂尖 BTL 品牌儀器，以最先進的治療技術提升復健成效。</p>
+      </div>
+      <div class="equip-grid">
+        <div class="equip-card">
+          <div class="equip-img-wrap"><img src="eq-sis.png" alt="超能磁場治療儀" /></div>
+          <div class="equip-info">
+            <div class="equip-en">SUPER INDUCTIVE SYSTEM</div>
+            <div class="equip-zh">超能磁場治療儀</div>
+            <div class="equip-desc">高強度電磁場穿透深層肌肉骨骼，促進神經肌肉活化、緩解疼痛並加速組織修復。</div>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-img-wrap"><img src="eq-focus-eswt.png" alt="聚焦式體外震波" /></div>
+          <div class="equip-info">
+            <div class="equip-en">FOCUSED ESWT</div>
+            <div class="equip-zh">聚焦式體外震波</div>
+            <div class="equip-desc">精準穿透深層組織，有效治療慢性肌腱病變、鈣化性肌腱炎及骨不癒合等頑固病症。</div>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-img-wrap"><img src="eq-radial-eswt.png" alt="放射式體外震波" /></div>
+          <div class="equip-info">
+            <div class="equip-en">RADIAL ESWT</div>
+            <div class="equip-zh">放射式體外震波</div>
+            <div class="equip-desc">廣域震波能量均勻擴散，適用於大面積軟組織疼痛、激痛點治療與促進血液循環。</div>
+          </div>
+        </div>
+        <div class="equip-card">
+          <div class="equip-img-wrap"><img src="eq-hil.png" alt="高能量雷射" /></div>
+          <div class="equip-info">
+            <div class="equip-en">HIGH INTENSITY LASER</div>
+            <div class="equip-zh">痛立消高能量雷射</div>
+            <div class="equip-desc">深層光能量直達病灶，快速消炎止痛、促進細胞再生，適用於急慢性疼痛治療。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BTL 原廠認證 -->
+    <div class="cert-section fade-in">
+      <div class="cert-label">
+        <span class="section-tag" style="margin-bottom:0;">BTL 原廠認證設備</span>
+        <p class="section-subtitle" style="margin-top:0.8rem; max-width:100%; white-space:nowrap;">恆好物理治療所通過國際原廠 BTL 認證，所有高階儀器均為正版購置，品質有保障。</p>
+      </div>
+      <div class="cert-track-wrap">
+        <div class="cert-track" id="certTrack">
+          <div class="cert-card">
+            <img src="cert-laser.jpg" alt="BTL 高能量雷射認證" />
+            <div class="cert-card-info">
+              <div class="cert-card-en">HIGH INTENSITY LASER</div>
+              <div class="cert-card-zh">痛立消高能量雷射</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <img src="cert-sis.jpg" alt="BTL 超磁場治療儀認證" />
+            <div class="cert-card-info">
+              <div class="cert-card-en">SUPER INDUCTIVE SYSTEM</div>
+              <div class="cert-card-zh">超磁場治療儀</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <img src="cert-eswt.jpg" alt="BTL 體外震波認證" />
+            <div class="cert-card-info">
+              <div class="cert-card-en">FOCUSED & RADIAL SHOCK WAVE</div>
+              <div class="cert-card-zh">聚焦式＆放射式體外震波雙機</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-dots">
+        <button class="cert-dot active" onclick="goToCert(0)"></button>
+        <button class="cert-dot" onclick="goToCert(1)"></button>
+        <button class="cert-dot" onclick="goToCert(2)"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <span class="section-tag">聯絡我們</span>
+        <h2 class="section-title">預約方式</h2>
+        <p class="section-subtitle">歡迎透過以下方式聯繫我們</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div class="contact-detail"><strong>治療所地址</strong><span>台南市麻豆區民生路 41 之 6 號</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.02 1.19 2 2 0 012 .02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
+            </div>
+            <div class="contact-detail"><strong>預約電話</strong><span>06-5720660　／　0978-025360</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </div>
+            <div class="contact-detail"><strong>電子信箱</strong><span>everwellptclinic@gmail.com</span></div>
+          </div>
+
+          <div class="contact-info-item" style="border-bottom:none; padding-top:1.5rem;">
+            <div style="display:flex; align-items:flex-end; gap:1.5rem;">
+              <a href="https://lin.ee/WX2a7pP" target="_blank" rel="noopener">
+                <img src="line-qr.png" alt="LINE QR Code" style="width:120px; height:120px; border-radius:4px; background:#fff; display:block;" />
+              </a>
+              <div style="display:flex; flex-direction:column; justify-content:flex-end;">
+                <div style="font-size:0.88rem; color:var(--stone); letter-spacing:0.08em; font-family:'Cormorant Garamond',serif; margin-bottom:0.3rem;">LINE 官方帳號</div>
+                <div style="font-size:0.95rem; color:var(--charcoal); margin-bottom:0.8rem;">ID：@918zldqw</div>
+                <a href="https://lin.ee/WX2a7pP" target="_blank" rel="noopener">
+                  <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="36" border="0" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map fade-in">
+        <!-- 營業時間表 -->
+        <div class="hours-wrap">
+          <div class="hours-label">營業時間</div>
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="hours-session">早<span>09:00–12:00</span></td>
+                <td><span class="dot off"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot off"></span></td>
+              </tr>
+              <tr>
+                <td class="hours-session">午<span>14:00–17:00</span></td>
+                <td><span class="dot off"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot off"></span></td>
+                <td><span class="dot off"></span></td>
+              </tr>
+              <tr>
+                <td class="hours-session">晚<span>18:00–21:00</span></td>
+                <td><span class="dot off"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot on"></span></td>
+                <td><span class="dot off"></span></td>
+                <td><span class="dot off"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="map-label" style="margin-top:1rem;">治療所位置</div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.702525618862!2d120.25265617601121!3d23.181054810394116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7dcf495e9b73%3A0x12b873271256b3f6!2z5oGG5aW954mp55CG5rK755mC5omA!5e0!3m2!1szh-TW!2stw!4v1776915846694!5m2!1szh-TW!2stw"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="恆好物理治療所位置">
+          </iframe>
+        </div>
+        <a
+          href="https://www.google.com/maps/place/恆好物理治療所/@23.1810548,120.2526562,17z"
+          target="_blank"
+          rel="noopener"
+          class="map-link">
+          在 Google Maps 中開啟 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 恆好物理治療所 EVERWELL Physical Therapy Clinic · All Rights Reserved · 台南市麻豆區民生路 41 之 6 號</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    burger.classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+
+  function goToCert(idx) {
+    const track = document.getElementById('certTrack');
+    const card = track.querySelector('.cert-card');
+    const cardW = card.offsetWidth + 24;
+    track.style.transform = `translateX(-${idx * cardW}px)`;
+    document.querySelectorAll('.cert-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  function toggleSvc(btn) {
+    const item = btn.closest('.svc-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.svc-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
