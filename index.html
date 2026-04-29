@@ -4,28 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>恆好物理治療所 | EVERWELL Physical Therapy Clinic</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="Logo.png" />
-  <link rel="apple-touch-icon" href="Logo.png" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://everwellptclinic.com/" />
-  <meta property="og:title" content="恆好物理治療所 | EVERWELL Physical Therapy Clinic" />
-  <meta property="og:description" content="健康恆久生活更好。恆好物理治療所由專業治療師團隊領軍，堅持以科學化評估為核心，為每位患者量身打造精準的治療計畫。" />
-  <meta property="og:image" content="https://everwellptclinic.com/clinic.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="zh_TW" />
-  <meta property="og:site_name" content="恆好物理治療所" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="恆好物理治療所 | EVERWELL Physical Therapy Clinic" />
-  <meta name="twitter:description" content="健康恆久生活更好。恆好物理治療所由專業治療師團隊領軍，堅持以科學化評估為核心，為每位患者量身打造精準的治療計畫。" />
-  <meta name="twitter:image" content="https://everwellptclinic.com/clinic.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -292,82 +270,104 @@
     /* RESPONSIVE */
     @media (max-width: 800px) {
       /* 基礎 */
+      html, body { overflow-x: hidden; }
       section { padding: 3rem 1.2rem; }
-      .container { max-width: 100%; }
+      .container { max-width: 100%; width: 100%; overflow-x: hidden; }
 
       /* NAV */
       nav { padding: 0 1.2rem; height: 60px; }
-      .nav-logo-zh { font-size: 1.1rem; }
-      .nav-logo-en { font-size: 0.72rem; }
-      .nav-logo-img { width: 36px; height: 36px; }
+      .nav-logo-zh { font-size: 1rem; }
+      .nav-logo-en { font-size: 0.65rem; }
+      .nav-logo-img { width: 32px; height: 32px; }
       .nav-links { display: none; }
       .gold-rule { margin: 0 1.2rem; }
 
       /* HERO */
-      .hero { padding: 5.5rem 1.2rem 3rem; }
-      .hero-logo { width: 140px; height: 140px; }
-      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-      .hero-title-en { font-size: 1rem; }
-      .hero-desc { font-size: 0.95rem; }
-      .btn-primary, .btn-outline { padding: 0.8rem 1.6rem; font-size: 0.9rem; }
+      .hero { padding: 5rem 1.2rem 3rem; }
+      .hero-title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+      .hero-title-en { font-size: 0.95rem; }
+      .hero-desc { font-size: 0.92rem; white-space: normal; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 0.85rem 1.2rem; font-size: 0.95rem; }
 
       /* ABOUT */
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .about-badge { bottom: -1rem; right: -0.5rem; padding: 1rem 1.2rem; }
-      .about-badge-num { font-size: 1.6rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .about-image-wrap { margin-right: 1.5rem; }
+      .about-badge { bottom: -1rem; right: -0.5rem; padding: 0.8rem 1.2rem; }
+      .about-badge-num { font-size: 1.4rem; }
+      .section-title { font-size: 1.6rem; }
+      .section-subtitle { font-size: 0.95rem; white-space: normal !important; }
+      .value-text strong { font-size: 0.95rem; }
+      .value-text span { font-size: 0.9rem; }
 
       /* TEAM */
       .team-single { grid-template-columns: 1fr; gap: 2rem; }
-      .team-photo-wrap { max-width: 300px; margin: 0 auto; }
+      .team-photo-wrap { max-width: 260px; margin: 0 auto; }
+      .team-name-lg { font-size: 1.5rem; margin-bottom: 1rem; }
+      .team-role { font-size: 0.95rem; }
+      .team-section-label { font-size: 0.82rem; }
+      .team-skills span { font-size: 0.88rem; padding: 0.25rem 0.7rem; }
+      .team-edu li { font-size: 0.88rem; }
 
       /* SERVICES */
       .svc-header { padding: 1.2rem 1rem; }
-      .svc-left { gap: 1rem; }
-      .svc-num { font-size: 1.4rem; min-width: 24px; }
-      .svc-name { font-size: 1rem; }
-      .svc-tags span { font-size: 0.78rem; }
-      .svc-body { padding: 0 1rem 0 3.5rem; }
-      .svc-item.open .svc-body { padding: 1.2rem 1rem 1.5rem 3.5rem; }
+      .svc-left { gap: 0.8rem; }
+      .svc-num { font-size: 1.3rem; min-width: 22px; }
+      .svc-name { font-size: 0.95rem; }
+      .svc-tags { display: none; }
+      .svc-body { padding: 0 0.8rem 0 3rem; }
+      .svc-item.open .svc-body { padding: 1rem 0.8rem 1.4rem 3rem; }
+      .svc-body p { font-size: 0.9rem; }
 
       /* PRICING */
-      .pricing-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 1rem; }
       .price-card { padding: 1.5rem 1.2rem; }
-      .price-plan { font-size: 0.88rem; height: auto; min-height: 2.8rem; }
-      .price-num { font-size: 2rem; }
-      .price-num-wrap { height: 3rem; }
-      .price-features li { font-size: 0.85rem; }
+      .price-plan { font-size: 0.9rem; height: auto; min-height: unset; margin-bottom: 0.5rem; }
+      .price-num { font-size: 2.2rem; }
+      .price-num-wrap { height: auto; margin-bottom: 0.5rem; }
+      .price-features li { font-size: 0.88rem; }
       .pricing-extra { grid-template-columns: 1fr; }
+      .pricing-extra-name { font-size: 0.9rem; }
+      .pricing-extra-price { font-size: 1.2rem; }
 
       /* ENVIRONMENT */
       .env-grid { grid-template-columns: 1fr; }
-      .env-card-wide { grid-column: 1; display: block; }
+      .env-card-wide { display: block; }
       .env-card-wide .env-photo-wide { aspect-ratio: 4/3; }
+      .env-name { font-size: 1rem; }
+      .env-desc { font-size: 0.88rem; }
+
       /* EQUIP */
-      .equip-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .equip-img-wrap { height: 180px; }
-      .equip-zh { font-size: 0.95rem; }
-      .equip-desc { font-size: 0.85rem; }
+      .equip-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .equip-img-wrap { height: 160px; padding: 1rem; }
+      .equip-zh { font-size: 0.88rem; }
+      .equip-en { font-size: 0.75rem; }
+      .equip-desc { font-size: 0.8rem; display: none; }
+      .equip-info { padding: 0.8rem 1rem 1rem; }
 
       /* CERT */
-      .cert-card { flex: 0 0 80%; }
+      .cert-track-wrap { overflow-x: auto; }
+      .cert-card { flex: 0 0 75%; }
+      .cert-section { margin-top: 2rem; padding-top: 2rem; }
 
       /* CONTACT */
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .hours-table thead th { font-size: 0.78rem; padding: 0.2rem 0.1rem; }
-      .hours-session { font-size: 0.78rem; }
-      .hours-session span { font-size: 0.68rem; }
+      .contact-detail span { font-size: 0.9rem; }
+      .hours-table thead th { font-size: 0.75rem; padding: 0.15rem 0.1rem; }
+      .hours-session { font-size: 0.75rem; }
+      .hours-session span { font-size: 0.65rem; }
+      .map-wrap { height: 200px; }
 
       /* FOOTER */
-      footer { height: auto; padding: 1.5rem 1.2rem; }
-      .footer-copy { font-size: 0.75rem; }
+      footer { height: auto; padding: 1.2rem; }
+      .footer-copy { font-size: 0.7rem; line-height: 1.6; }
     }
 
     @media (max-width: 480px) {
+      .equip-grid { grid-template-columns: 1fr 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
-      .equip-grid { grid-template-columns: 1fr; }
-      .hero-btns { flex-direction: column; align-items: center; }
-      .btn-primary, .btn-outline { width: 100%; text-align: center; }
-      .section-title { font-size: 1.6rem; }
+      .nav-logo-en { display: none; }
+      .hours-table { font-size: 0.7rem; }
     }
   </style>
 
